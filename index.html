@@ -5,23 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Series Saga</title>
+
+    <!-- favicon -->
+    <link rel="icon" href="assets/img/favicon.png" type="image/png">
+
+    <!-- custom stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <div>
-        <p class="note">Welcome aboard, pal! Brace yourself for a quote-filled adventure. Simply hit that 'hit it'
+    <main>
+        <p class="welcome-note">Welcome aboard, pal! Brace yourself for a quote-filled adventure. Simply hit that 'hit it'
             button and let the wisdom flow!</p>
+        <span class="nav-link-container">Visit <a href="saved-quotes.html" class="nav-link">Saved Quotes</a></span>
         <div class="quote-container">
             <button type="button" class="quote-btn">Hit it!</button>
-            <p class="quote">"Though I would treasure your friendship, I'm mainly interested in your facility with
-                murder. And if the day ever comes when you're tempted to sell me out, remember this; whatever their
-                price, I'll beat it. I like living. "</p>
-            <span class="quote-author">- Tyrion Lannister</span>
-            <span class="quote-series">(game_of_thrones)</span>
+            <div class="quote-actions">
+                <button type="button" class="save-btn">Save</button>
+                <button type="button" class="share-btn">Share</button>
+            </div>
+            <p class="quote-text"></p>
+            <span class="quote-author"></span>
+            <span class="quote-series"></span>
         </div>
-    </div>
-    <script src="assets/script/quote.js"></script>
+    </main>   
+
+    <!-- custom script -->
+    <script src="assets/script/script.js"></script>
 </body>
 
 </html>

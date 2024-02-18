@@ -4,20 +4,53 @@
     box-sizing: border-box;
 }
 
+html,body{
+    height: 100%;
+}
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #F3E9DC;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    height: 100vh;
+    height: 100%;
+}
+
+button{
+    border: 3px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background-color: #F3E9DC;
+    padding: 10px 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: 300ms ;
+}
+
+button:hover{
+    background-color: #d9c7ae;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.welcome-note{
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.nav-link-container{
+    text-align: center;
+    display: block;
 }
 
 .quote-container{
     padding: 1rem;
     background-color: #5E3023;
-    /* min-height: 350px;
-    width: min(90%, 350px); */
     min-height: 350px;
     max-width: 350px;
     border-radius: 12px;
@@ -29,35 +62,24 @@ body{
     margin: auto;
 }
 
-.quote-container .quote-btn{
-    border: 3px solid #333;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    background-color: #F3E9DC;
-    padding: 10px 35px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    transition: 300ms ;
+.quote-container .quote-actions{
+    display: flex;
+    gap: 6px;
 }
 
-.quote-container .quote-btn:hover{
-    background-color: #d9c7ae;
+.quote-container .quote-actions button{
+    flex: 1;
 }
 
-.quote-container p{
+.quote-container .quote-text{
     font-size: 1.2rem;
 }
 
-.quote-container span{
+.quote-container .quote-author,
+.quote-container .quote-series{
     display: block;
     font-size: 1.2rem;
     text-align: center;
-}
-
-.note{
-    padding: 0 2rem;
-    text-align: center;
-    margin-bottom: min(100px,10%);
 }
 
 @media screen and (max-width: 400px) {
