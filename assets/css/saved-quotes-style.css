@@ -14,21 +14,24 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.saved-quotes-container{
+.saved-quotes-container,
+.shared-quotes-container{
     max-width: 1080px;
     width: 85%;
     margin: auto;
     padding: 60px 0;
 }
 
-.saved-quotes-container .saved-quotes-header{
+.saved-quotes-container .saved-quotes-header,
+.shared-quotes-container .shared-quotes-header{
     margin-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.saved-quotes-container .saved-quotes-title{
+.saved-quotes-container .saved-quotes-title,
+.shared-quotes-container .shared-quotes-title{
     font-size: 24px;
     font-weight: 500;
 }

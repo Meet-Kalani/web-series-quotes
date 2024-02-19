@@ -4,31 +4,29 @@ const savedQuotesTitleElement = document.querySelector('.saved-quotes-title');
 const quoteElement = document.querySelector('.quote-text');
 const quoteSeriesElement = document.querySelector('.quote-series');
 const quoteAuthorElement = document.querySelector('.quote-author');
+const shareBtnElement = document.querySelector('.share-btn');
 
-// Retrieving saved quotes from localStorage
 let savedQuotes = JSON.parse(localStorage.getItem('savedQuotes'));
 
-// Event listener for when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // If there are no saved quotes, display a message
+
     if (!savedQuotes) {
-        savedQuotesTitleElement.textContent = "No saved quotes yet. Save a quote and come back!";
+        sharedQuotesTitleElement.textContent = "No saved quotes yet. Save a quote and come back!";
         return;
     }
-    // If there are saved quotes, fetch and display them
-    fetchSavedQuote();
+
+    displaySharedQuote();
 })
 
-// Function to fetch and display saved quotes
-function fetchSavedQuote() {
-    // Iterating through each saved quote
+function displaySharedQuote() {
+    
     savedQuotes.forEach(savedQuote => {
-        // Creating a container element for each saved quote
+    
         let savedQuoteElement = document.createElement('div');
         savedQuoteElement.classList.add('saved-quote');
         savedQuotesContainerElement.appendChild(savedQuoteElement);
 
-        // Creating elements to display the quote text, author, and series
+    
         let quoteTextElement = document.createElement('p');
         quoteTextElement.classList.add('quote-text');
         savedQuoteElement.appendChild(quoteTextElement);
@@ -41,9 +39,25 @@ function fetchSavedQuote() {
         quoteSeriesElement.classList.add('quote-series');
         savedQuoteElement.appendChild(quoteSeriesElement);
 
-        // Setting the text content of the elements with the saved quote data
+        let shareQuoteElement = document.createElement('a');
+        shareQuoteElement.href = `shared-quote.html?id=${savedQuote.id}`;
+        savedQuoteElement.appendChild(shareQuoteElement);
+
+        shareQuoteElement.addEventListener('click', function(event) {
+            // Prevent the default behavior of following the link
+            event.preventDefault();
+        
+            // Get the URL from the href attribute of the element
+            const url = this.getAttribute('href');
+        
+            // Redirect the user to the new URL
+            window.location.href = url;
+        });
+
+    
         quoteTextElement.textContent = `"${savedQuote.quote}"`;
         quoteSeriesElement.textContent = `(${savedQuote.series})`;
         quoteAuthorElement.textContent = `- ${savedQuote.author}`;
+        shareQuoteElement.textContent = `share`;
     });
 }
