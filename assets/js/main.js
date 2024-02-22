@@ -16,6 +16,13 @@ quoteBtnElement.addEventListener('click',fetchQuote);
 saveBtnElement.addEventListener('click', () => {
     let savedQuotes = JSON.parse(localStorage.getItem('savedQuotes')) || [];
 
+    // Checking is the quote is already saved, if then dont save it again
+    const isAlreadySavedId = savedQuotes.length && savedQuotes[savedQuotes.length - 1].id;
+
+    if(currentQuote.id === isAlreadySavedId){
+        return;
+    }
+
     savedQuotes.push(currentQuote);
 
     localStorage.setItem('savedQuotes', JSON.stringify(savedQuotes));
