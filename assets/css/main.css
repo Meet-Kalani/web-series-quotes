@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-html,body{
-    height: 100%;
-}
-
 body{
     background-color: #F3E9DC;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -52,7 +48,7 @@ button:hover{
     min-height: 350px;
     max-width: 350px;
     border-radius: 12px;
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -113,7 +109,7 @@ button:hover{
     padding: 1rem;
     background-color: #5E3023;
     border-radius: 12px;
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -129,6 +125,9 @@ button:hover{
 .saved-quote .quote-author,
 .saved-quote .quote-series{
     display: block;
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 1rem;
+}
+
+.share-link{
+    text-align: right;
 }
